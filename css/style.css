@@ -350,7 +350,7 @@ h6,
 }
 
 .service-item:hover .service-text {
-    background: rgba(0, 0, 0, .7);
+    background: rgba(42, 42, 42, 0.7);
 }
 
 .service-item * {
