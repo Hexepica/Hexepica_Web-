@@ -82,3 +82,60 @@
     
 })(jQuery);
 
+document.addEventListener("DOMContentLoaded", function() {
+    const slides = document.querySelectorAll('.img-slide');
+    const contents = document.querySelectorAll('.content');
+    const navButtons = document.querySelectorAll('.nav-btn');
+
+    let currentSlide = 0;
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            if (i === index) {
+                slide.classList.add('active');
+            } else {
+                slide.classList.remove('active');
+            }
+        });
+
+        contents.forEach((content, i) => {
+            if (i === index) {
+                content.classList.add('active');
+            } else {
+                content.classList.remove('active');
+            }
+        });
+
+        navButtons.forEach((button, i) => {
+            if (i === index) {
+                button.classList.add('active');
+            } else {
+                button.classList.remove('active');
+            }
+        });
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    // Handle navigation button clicks
+    navButtons.forEach((button, i) => {
+        button.addEventListener('click', () => {
+            currentSlide = i;
+            showSlide(currentSlide);
+        });
+    });
+
+    // Automatically change slides every 5 seconds
+    setInterval(nextSlide, 5000);
+
+    // Show the initial slide
+    showSlide(currentSlide);
+});
