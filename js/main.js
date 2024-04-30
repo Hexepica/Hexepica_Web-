@@ -86,6 +86,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const slides = document.querySelectorAll('.img-slide');
     const contents = document.querySelectorAll('.content');
     const navButtons = document.querySelectorAll('.nav-btn');
+    const home = document.querySelector('.home');
 
     let currentSlide = 0;
 
@@ -113,6 +114,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 button.classList.remove('active');
             }
         });
+
+        home.style.backgroundImage = `url(${slides[index].src})`;
     }
 
     function nextSlide() {
@@ -125,7 +128,6 @@ document.addEventListener("DOMContentLoaded", function() {
         showSlide(currentSlide);
     }
 
-    // Handle navigation button clicks
     navButtons.forEach((button, i) => {
         button.addEventListener('click', () => {
             currentSlide = i;
@@ -133,9 +135,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // Automatically change slides every 5 seconds
-    setInterval(nextSlide, 5000);
+    setInterval(nextSlide, 7000);
 
-    // Show the initial slide
     showSlide(currentSlide);
 });
