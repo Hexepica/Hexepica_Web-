@@ -62,6 +62,7 @@ h6,
 .btn.btn-primary,
 .btn.btn-secondary {
     color: #FFFFFF;
+    background:  linear-gradient(#ef4d25, #f6b62e);
 }
 
 .btn-square {
@@ -149,11 +150,18 @@ h6,
     font-weight: 500;
     text-transform: uppercase;
     outline: none;
+    
 }
+
 
 .navbar .navbar-nav .nav-link:hover,
 .navbar .navbar-nav .nav-link.active {
     color: var(--primary);
+    background: linear-gradient(#ef4d25, #f6b62e);
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: 0.5s ease-in-out;
 }
 
 .navbar.sticky-top {
@@ -394,9 +402,9 @@ div.home{
 }
 
 .home .content a {
-    background: #fff;
+    background: #6b6b6b;
     padding: 1vw 3vw; /* Adjusted padding */
-    color: #09a6d4;
+    color: #ffffff;
     font-size: 1.5vw; 
     font-weight: 500;
     text-decoration: none;
@@ -404,8 +412,8 @@ div.home{
 }
 
 .home .content a:hover {
-    background: #09a6d4;
-    color: #fff;
+    background: linear-gradient(#ef4d25, #f6b62e); 
+    
 }
 
 .home .media-icons {
@@ -465,7 +473,7 @@ div.home{
 }
 
 .slider-navigation .nav-btn.active {
-    background: #09a6d4;
+    background: linear-gradient(#ef4d25, #f6b62e);
 }
 
 .slider-navigation .nav-btn:not(:last-child) {
